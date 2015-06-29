@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  resources :advertisments
+
   resources :posts
 
   root to: 'welcome#index'
