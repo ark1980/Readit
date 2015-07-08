@@ -1,3 +1,8 @@
 <h2><%= @post.title %></h2>
 <p><%= @post.body %></p>
+<small>
+   Submitted <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.name %><br />
+   <%= @post.comments.count %> Comments
+</small>
+<br /><br />
 <%= link_to "Edit", edit_post_path(@post), class: 'btn btn-success' %>
