@@ -20,6 +20,7 @@ gem 'turbolinks'
 gem 'font-awesome-sass'
 gem 'faker'
 gem 'devise'
+gem "pundit"
 gem 'figaro', '~> 1.1.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
