@@ -12,13 +12,6 @@ require 'faker'
  end
  users = User.all
 
- # Note: by calling `User.new` instead of `create`,
- # we create an instance of User which isn't immediately saved to the database.
-
- # The `skip_confirmation!` method sets the `confirmed_at` attribute
- # to avoid triggering an confirmation email when the User is saved.
-
- # The `save` method then saves this User to the database.
 
  # Create Posts
  50.times do
@@ -31,6 +24,7 @@ require 'faker'
  end
  posts = Post.all
 
+
  # Create Topics
  15.times do
    Topic.create!(
@@ -40,6 +34,7 @@ require 'faker'
  end
  topics = Topic.all
 
+
  # Create Comments
  100.times do
    Comment.create!(
@@ -48,6 +43,7 @@ require 'faker'
      body: Faker::Lorem.paragraph
    )
  end
+
 
   # Create an admin user
  admin = User.new(
@@ -59,6 +55,7 @@ require 'faker'
  admin.skip_confirmation!
  admin.save!
 
+
  # Create a moderator
  moderator = User.new(
    name:     'Moderator User',
@@ -68,6 +65,7 @@ require 'faker'
  )
  moderator.skip_confirmation!
  moderator.save!
+
 
  # Create a member
  member = User.new(

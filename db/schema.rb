@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720221011) do
+ActiveRecord::Schema.define(version: 20150720231449) do
 
   create_table "advertisments", force: :cascade do |t|
     t.string   "title"
