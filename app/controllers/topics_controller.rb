@@ -39,6 +39,7 @@ class TopicsController < ApplicationController
       redirect_to @topic
     else
       flash[:error] = "Error saving topic. Please try again."
+      render :edit
     end
   end
 
