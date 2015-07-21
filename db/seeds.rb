@@ -35,6 +35,7 @@ require 'faker'
  topics = Topic.all
 
 
+
  # Create Comments
  100.times do
    Comment.create!(

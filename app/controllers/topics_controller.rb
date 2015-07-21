@@ -7,6 +7,7 @@ class TopicsController < ApplicationController
 
   def show
     @topic = Topic.find(params[:id])
+    @posts = @topic.posts
     authorize @topic
   end
 
@@ -16,7 +17,7 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topic = Topic.find(params.require(:topic).permit(:name, :public, :description))
+    @topic = Topic.new(params.require(:topic).permit(:name, :public, :description))
     authorize @topic
     if @topic.save
       flash[:notice] = "Topic was saved successfully."
