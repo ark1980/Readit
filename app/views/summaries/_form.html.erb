@@ -1,0 +1,10 @@
+<%= form_for ([@post, @post.summary.create]) do |f| %>
+  <p>
+  <%= f.lable :body %>
+  <%= f.text_area :body %>
+  </p>
+
+  <p>
+  <%= f.submit %>
+  </p>
+<% end %>
