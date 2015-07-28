@@ -10,7 +10,7 @@ class SummariesController < ApplicationController
   # end
 
   def create
-    @posts = Post.find(params[:post_id])
+    @post = Post.new(params.require(:post).permit!)
     @summary = @post.summary.create(params[:summary].permit(:body))
     if @summary.save
       flash[:notice] = "Your summary has saved"
