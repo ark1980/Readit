@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :advertisments
   resources :topics do
     resources :posts, except: [:index] do
-      resource :summary, only: [:show, :new]
+      resources :summaries, only: [:show, :new, :create]
     end
   end
 
