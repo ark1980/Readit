@@ -10,7 +10,7 @@
             <%= link_to topic.name, topic %>
           </h4>
           <small>
-            <%= topic.description %>
+            <%= markdown_to_html topic.description %>
           </small>
         </div>
       </div>

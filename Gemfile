@@ -6,11 +6,11 @@ group :production do
    gem 'pg'
    gem 'rails_12factor'
  end
- 
+
  group :development do
    gem 'sqlite3'
  end
- 
+
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
@@ -21,6 +21,7 @@ gem 'font-awesome-sass'
 gem 'faker'
 gem 'devise'
 gem "pundit"
+gem 'redcarpet'
 gem 'figaro', '~> 1.1.1'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'

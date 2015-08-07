@@ -35,7 +35,7 @@ class TopicsController < ApplicationController
 
   def update
     @topic = Topic.find(params[:id])
-    authorize @topics
+    authorize @topic
     if @topic.update_attributes(topic_params)
       redirect_to @topic
     else
