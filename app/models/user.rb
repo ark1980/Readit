@@ -14,4 +14,6 @@ class User < ActiveRecord::Base
   end
 
   scope :newer_than, ->(date) { where('created_at > ?', date) }
+
+  mount_uploaders :avatars, AvatarUploader
 end
