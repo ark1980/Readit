@@ -18,10 +18,13 @@
 </div>
 
 <br />
-<div class="row">
+<div class="row" %>
+  <div class="col-md-8">
+      <%= image_tag(@post.image.medium.url, class: 'img-thumbnail') %>
+  </div>
+
   <div class="col-md-4">
       <%= render "summaries/form" %>
-    </div>
   </div>
 
 </div>
