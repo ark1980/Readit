@@ -9,6 +9,9 @@ group :production do
 
  group :development do
    gem 'sqlite3'
+   # Better errors
+   gem 'binding_of_caller', '~> 0.7.2'
+   gem 'better_errors', '~> 2.1.1'
  end
 
 gem 'sass-rails', '~> 5.0'
