@@ -18,10 +18,9 @@
 </div>
 
 <br />
-<div class="row">
-  <div class="col-md-4">
-      <%= render "summaries/form" %>
+  <div class="row">
+    <div class="col-md-4">
+      <%= render partial: 'comments/comment', collection: @post.comments %>
+      <%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %>
     </div>
   </div>
-
-</div>
