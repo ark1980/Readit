@@ -8,4 +8,4 @@ class CommentPolicy < ApplicationPolicy
     create?
   end
 
- end
+end

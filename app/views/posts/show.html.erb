@@ -24,6 +24,11 @@
       <em><%= @post.comments.count %> comment so far</em>
       <hr>
         <%= render partial: 'comments/comment', collection: @post.comments %>
-        <%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %>
+        <% if policy(@comment).create? %>
+          <%= render partial: 'comments/form', locals: { topic: @topic, post: @post } %>
+        <% else %>
+           <p>To add a comments please sign in first.</p>
+            <%= link_to "Sign in", new_user_session_path, class: 'btn btn-primary' %>
+        <% end %>
     </div>
   </div>
