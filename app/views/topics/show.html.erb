@@ -3,9 +3,17 @@
  <div class="row">
    <div class="col-md-8">
      <p class="lead"><%= @topic.description %></p>
+
+    <!-- Edit Topic -->
      <% if policy(@topic).update? %>
        <%= link_to "Edit Topic", edit_topic_path, class: 'btn btn-success' %>
      <% end %>
+
+    <!-- Destroy Topic -->
+     <% if policy(@topic).destroy %>
+      <%= link_to "Delete Topic", @topic, method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure you want to delete the topic?" } %>
+     <% end %>
+
      <% @posts.each do |post| %>
        <div class="media">
          <div class="media-body">
