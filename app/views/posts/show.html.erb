@@ -11,8 +11,15 @@
   </div>
 
   <div class="col-md-4">
+
+    <!-- Edit Post -->
     <% if policy(@post).edit? %>
       <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
+    <% end %>
+
+    <!-- Destroy Post -->
+    <% if policy(@post).destroy? %>
+      <%= link_to "Delete Post", [@topic, @post], class: 'btn btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
     <% end %>
   </div>
 </div>
