@@ -10,7 +10,7 @@
      <% end %>
 
     <!-- Destroy Topic -->
-     <% if policy(@topic).destroy %>
+     <% if policy(@topic).destroy? %>
       <%= link_to "Delete Topic", @topic, method: :delete, class: 'btn btn-danger', data: { confirm: "Are you sure you want to delete the topic?" } %>
      <% end %>
 

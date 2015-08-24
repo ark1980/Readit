@@ -46,7 +46,7 @@ class TopicsController < ApplicationController
 
   def destroy
     @topic = Topic.find(params[:id])
-    autorize @topic
+    authorize @topic
     if @topic.destroy
       flash[:notice] = "\"#{@topic.name}\" topic was deleted successfully."
       redirect_to topics_path
