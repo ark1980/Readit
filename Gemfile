@@ -14,9 +14,7 @@ group :production do
    gem 'better_errors', '~> 2.1.1'
  end
 
- group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
-end
+
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
