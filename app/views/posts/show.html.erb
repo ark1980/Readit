@@ -1,34 +1,43 @@
-<h1><%= markdown_to_html @post.title %></h1>
 
 <div class="row">
   <div class="col-md-8">
+    <%= render partial: 'votes/voter', locals: { post: @post } %>
+      <h1><%= markdown_to_html @post.title %></h1>
     <small>
        <%= image_tag(@post.user.avatar.tiny.url) if @post.user.avatar? %>
        submitted <%= time_ago_in_words(@post.created_at) %> ago by
        <%= @post.user.name %>
      </small>
     <p><%= markdown_to_html @post.body %></p>
+    <div>
+      <h5><%= pluralize(@post.points, 'point') %></h5>
+      <small>
+        <%= pluralize(@post.up_votes, 'up vote') %> |
+        <%= pluralize(@post.down_votes, 'down vote') %>
+      </small>
+    </div>
   </div>
 
   <div class="col-md-4">
-
     <!-- Edit Post -->
-    <% if policy(@post).edit? %>
-      <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
-    <% end %>
+      <div class="edit-delete-button">
+        <% if policy(@post).edit? %>
+          <%= link_to "Edit", edit_topic_post_path(@topic, @post), class: 'btn btn-success' %>
+        <% end %>
 
-    <!-- Destroy Post -->
-    <% if policy(@post).destroy? %>
-      <%= link_to "Delete Post", [@topic, @post], class: 'btn btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
-    <% end %>
+        <!-- Destroy Post -->
+        <% if policy(@post).destroy? %>
+          <%= link_to "Delete", [@topic, @post], class: 'btn btn-danger', method: :delete, data: { confirm: "Are you sure?" } %>
+        <% end %>
+      </div>
   </div>
 </div>
 
-<br />
-  <div class="row">
-    <div class="col-md-4">
+
+<div class="row">
+    <div class="col-md-8">
       <h3>Comments: </h3>
-      <em><%= @post.comments.count %> comment so far</em>
+      <em><%= pluralize(@post.comments.count, 'comment') %> so far</em>
       <hr>
         <%= render partial: 'comments/comment', collection: @post.comments %>
         <% if policy(@comment).create? %>
@@ -38,4 +47,4 @@
             <%= link_to "Sign in", new_user_session_path, class: 'btn btn-primary' %>
         <% end %>
     </div>
-  </div>
+</div>
