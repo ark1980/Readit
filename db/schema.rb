@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150828205450) do
+=======
+ActiveRecord::Schema.define(version: 20150813051107) do
+>>>>>>> checkpoint-44-assignment
 
   create_table "advertisments", force: :cascade do |t|
     t.string   "title"
@@ -48,6 +52,7 @@ ActiveRecord::Schema.define(version: 20150828205450) do
     t.datetime "updated_at", null: false
     t.integer  "user_id"
     t.integer  "topic_id"
+    t.string   "image"
   end
 
   add_index "posts", ["topic_id"], name: "index_posts_on_topic_id"

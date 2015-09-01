@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   has_one :summary
   belongs_to :user
   belongs_to :topic
+  mount_uploader :image, ImageUploader
 
   def up_votes
     votes.where(value: 1).count
