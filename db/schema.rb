@@ -11,19 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 20150828205450) do
-=======
-ActiveRecord::Schema.define(version: 20150813051107) do
->>>>>>> checkpoint-44-assignment
-
-  create_table "advertisments", force: :cascade do |t|
-    t.string   "title"
-    t.text     "copy"
-    t.integer  "price"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+ActiveRecord::Schema.define(version: 20150831070132) do
 
   create_table "answers", force: :cascade do |t|
     t.text     "body"
@@ -109,5 +97,11 @@ ActiveRecord::Schema.define(version: 20150813051107) do
 
   add_index "votes", ["post_id"], name: "index_votes_on_post_id"
   add_index "votes", ["user_id"], name: "index_votes_on_user_id"
+
+  create_table "widgets", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

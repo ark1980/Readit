@@ -4,7 +4,11 @@ require 'rails_helper'
    describe "vote methods" do
 
      before do
+<<<<<<< HEAD
        @post = Post.create(title: 'Post title', body: 'Post bodies must be pretty long.')
+=======
+       @post = Post.create(title: 'post title', body: 'post body')
+>>>>>>> intro-to-rspec-assignment
        3.times { @post.votes.create(value: 1) }
        2.times { @post.votes.create(value: -1) }
      end
