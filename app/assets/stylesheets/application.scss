@@ -8,12 +8,23 @@
 .user-info {
    margin-top: 9px;
  }
- 
+
  .nav {
    margin-top: 5px;
  }
 
-small { 
+small {
   font-size: smaller;
   color: #0066cc;
 }
+
+.vote-arrows {
+   width: 40px;
+   text-align: center;
+   margin-top: 8px;
+ }
+
+ .edit-delete-button {
+   float: right;
+   margin-top: 30px;
+ }
